@@ -1,4 +1,5 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jimdo.uchida001tmhr.simple_work_manager_example">
    <application
         android:label="simple_work_manager_example"
         android:name="${applicationName}"
