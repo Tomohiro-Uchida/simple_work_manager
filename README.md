@@ -16,10 +16,10 @@ dependencies:
 ### iOS
 1.　Permitted background task scheduler identifier  
 Set PermittedBackgroundTaskSchedulerIdentifier as unique string.
-![PermittedBackgroundTaskSchedulerIdentifier](md.image/PermittedBackgroundTaskSchedulerIdentifier.png)
+![PermittedBackgroundTaskSchedulerIdentifier](PermittedBackgroundTaskSchedulerIdentifier.png)
 2. Background modes  
 Check Background processing.
-![BackgroundProcessing](md.image/BackgroundProcessing.png)
+![BackgroundProcessing](BackgroundProcessing.png)
 
 ## Import
 ```
@@ -53,7 +53,6 @@ _simpleWorkManagerPlugin.schedule(
         requiresNetworkConnectivity: true,
         requiresExternalPower: true,
         taskIdentifier: "com.jimdo.uchida001tmhr.simple_work_manager.process"));
-  }
 ```
 requiresNetworkConnectivity and requiresExternalPower must be set as following section.
 targetPeriodInMinutes specifies minimum interval of background process, minimum value is 15.
