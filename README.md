@@ -14,12 +14,9 @@ dependencies:
 ```
 
 ### iOS
-1.　Permitted background task scheduler identifier  
-Set PermittedBackgroundTaskSchedulerIdentifier as unique string.
-![PermittedBackgroundTaskSchedulerIdentifier](./md.image/PermittedBackgroundTaskSchedulerIdentifier.png)
-2. Background modes  
+1.　Permitted background task scheduler identifier in info.plist in Xcode  Set PermittedBackgroundTaskSchedulerIdentifier as unique string like <[com].[domain].background.process>.  
+2. Background modes in Xcode   
 Check Background processing.
-![BackgroundProcessing](./md.image/BackgroundProcessing.png)
 
 ## Import
 ```
