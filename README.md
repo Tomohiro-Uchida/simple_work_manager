@@ -14,9 +14,14 @@ dependencies:
 ```
 
 ### iOS
-1.　Permitted background task scheduler identifier in info.plist in Xcode  Set PermittedBackgroundTaskSchedulerIdentifier as unique string like <[com].[domain].background.process>.  
+1.　Permitted background task scheduler identifier in info.plist in Xcode  
+Set PermittedBackgroundTaskSchedulerIdentifier as unique string like <[com].[domain].background.process>.  
 2. Background modes in Xcode   
-Check Background processing.
+Check Background processing.  
+3. Add code for registration into AppDelegate.swift.
+``` AppDelegate.swift
+GeneratedPluginRegistrant.register(with: self)
+```
 
 ## Import
 ```
