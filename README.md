@@ -15,7 +15,7 @@ dependencies:
 
 ### iOS
 1.　Permitted background task scheduler identifier in info.plist in Xcode  
-Set PermittedBackgroundTaskSchedulerIdentifier as unique string like <[com].[domain].background.process>.  
+Set PermittedBackgroundTaskSchedulerIdentifier as unique string like <[com].[domain].simple_work_manager.process>.  
 2. Background modes in Xcode   
 Check Background processing.  
 3. Add code for registration into AppDelegate.swift.
@@ -39,8 +39,8 @@ Defines callback function as top level function. The callback function is called
 
 ## Instantiate SimpleWorkManager()
 ```dart:main.dart
-  SimpleWorkManager _simpleWorkManagerPlugin = 
-        SimpleWorkManager(callbackFunction: callbackDispatcher);
+_simpleWorkManagerPlugin =
+        SimpleWorkManager(callbackFunction: callbackDispatcher, callbackFunctionIdentifier: "callbackDispatcher");
 ```
 Specifies callbackFunction defined above. Specifies callbackFunctionIdentifier as arbitrarily non-empty string, typically same as callbackFunction name. 
 

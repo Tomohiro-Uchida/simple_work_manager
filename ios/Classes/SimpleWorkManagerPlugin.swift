@@ -10,6 +10,14 @@ var taskIdentifier: String? = nil
 var gRequiresNetworkConnectivity: Bool?
 var gRequiresExternalPower: Bool?
 
+class backgroundOperation: Operation {
+  
+  override func main() {
+    channelToMain!.invokeMethod(callbackIdentifier!, arguments: nil)
+  }
+  
+}
+
 public class SimpleWorkManagerPlugin: NSObject, FlutterPlugin {
 
   public static func register(with registrar: FlutterPluginRegistrar) {
@@ -29,11 +37,22 @@ public class SimpleWorkManagerPlugin: NSObject, FlutterPlugin {
         requiresExternalPower: gRequiresExternalPower
       )
       // タスクが実行された時の処理を記述する
-      channelToMain!.invokeMethod(callbackIdentifier!, arguments: nil)
-      task.setTaskCompleted(success: true)
+      let queue = OperationQueue()
+      queue.maxConcurrentOperationCount = 1
+      
+      // 時間内に実行完了しなかった場合は、処理を解放します
+      // バックグラウンドで実行する処理は、次回に回しても問題ない処理のはずなので、これでOK
       task.expirationHandler = {
-        // キャンセル処理を実行
+        queue.cancelAllOperations()
       }
+      
+      // サンプルの処理をキューに詰めます
+      let operation = backgroundOperation()
+      operation.completionBlock = {
+        // 最後の処理が完了したら、必ず完了したことを伝える必要があります
+        task.setTaskCompleted(success: operation.isFinished)
+      }
+      queue.addOperation(operation)
     })
   }
 

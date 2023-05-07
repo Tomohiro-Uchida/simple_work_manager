@@ -15,3 +15,12 @@ Bug fixed.
 
 ## 0.0.6+6
 Bug fixed.
+
+## 0.0.7+7
+Bug fixed.
+
+## 0.0.8+8
+Bug fixed.
+
+## 0.1.0+9
+Bug fixed.
