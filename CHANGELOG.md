@@ -24,3 +24,9 @@ Bug fixed.
 
 ## 0.1.0+9
 Bug fixed.
+
+## 0.1.1+10
+Bug fixed.
+
+## 0.1.2+11
+Bug fixed.
