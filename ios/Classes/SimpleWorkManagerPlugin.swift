@@ -10,14 +10,6 @@ var taskIdentifier: String? = nil
 var gRequiresNetworkConnectivity: Bool?
 var gRequiresExternalPower: Bool?
 
-class backgroundOperation: Operation {
-  
-  override func main() {
-    channelToMain!.invokeMethod(callbackIdentifier!, arguments: nil)
-  }
-  
-}
-
 public class SimpleWorkManagerPlugin: NSObject, FlutterPlugin {
 
   public static func register(with registrar: FlutterPluginRegistrar) {
@@ -37,7 +29,7 @@ public class SimpleWorkManagerPlugin: NSObject, FlutterPlugin {
         requiresExternalPower: gRequiresExternalPower
       )
       channelToMain!.invokeMethod(callbackIdentifier!, arguments: nil)
-      task.setTaskCompleted(success: operation.isFinished)
+      task.setTaskCompleted(success: true)
       task.expirationHandler = {
       }
     })
