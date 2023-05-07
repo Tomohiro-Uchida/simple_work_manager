@@ -36,23 +36,10 @@ public class SimpleWorkManagerPlugin: NSObject, FlutterPlugin {
         requiresNetworkConnectivity: gRequiresNetworkConnectivity,
         requiresExternalPower: gRequiresExternalPower
       )
-      // タスクが実行された時の処理を記述する
-      let queue = OperationQueue()
-      queue.maxConcurrentOperationCount = 1
-      
-      // 時間内に実行完了しなかった場合は、処理を解放します
-      // バックグラウンドで実行する処理は、次回に回しても問題ない処理のはずなので、これでOK
+      channelToMain!.invokeMethod(callbackIdentifier!, arguments: nil)
+      task.setTaskCompleted(success: operation.isFinished)
       task.expirationHandler = {
-        queue.cancelAllOperations()
       }
-      
-      // サンプルの処理をキューに詰めます
-      let operation = backgroundOperation()
-      operation.completionBlock = {
-        // 最後の処理が完了したら、必ず完了したことを伝える必要があります
-        task.setTaskCompleted(success: operation.isFinished)
-      }
-      queue.addOperation(operation)
     })
   }
 
