@@ -30,3 +30,6 @@ Bug fixed.
 
 ## 0.1.2+11
 Bug fixed.
+
+## 0.1.3+12
+Bug fixed.

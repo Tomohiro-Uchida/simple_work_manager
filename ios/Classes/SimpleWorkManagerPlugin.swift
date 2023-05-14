@@ -44,7 +44,6 @@ public class SimpleWorkManagerPlugin: NSObject, FlutterPlugin {
           let requiresExternalPower = args["requiresExternalPower"] as? Bool
           taskIdentifier = taskIdentifierLocal
           callbackIdentifier = args["callbackIdentifier"] as? String
-          let formatter = DateFormatter()
           schedule(
               taskIdentifier: taskIdentifier!,
               requiresNetworkConnectivity: requiresNetworkConnectivity,
