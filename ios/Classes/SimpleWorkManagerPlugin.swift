@@ -9,6 +9,7 @@ var callbackIdentifier: String? = nil
 var taskIdentifier: String? = nil
 var gRequiresNetworkConnectivity: Bool?
 var gRequiresExternalPower: Bool?
+var simpleWorkManagerPlugin = SimpleWorkManagerPlugin()
 
 public class SimpleWorkManagerPlugin: NSObject, FlutterPlugin {
 
@@ -22,7 +23,6 @@ public class SimpleWorkManagerPlugin: NSObject, FlutterPlugin {
     BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.jimdo.uchida001tmhr.simple_work_manager.process",
                                     using: nil,
                                     launchHandler: { task in
-      let simpleWorkManagerPlugin = SimpleWorkManagerPlugin()
       simpleWorkManagerPlugin.schedule(
         taskIdentifier: taskIdentifier!,
         requiresNetworkConnectivity: gRequiresNetworkConnectivity,
