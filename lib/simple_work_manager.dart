@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 import 'simple_work_manager_platform_interface.dart';
@@ -26,6 +27,7 @@ class IOSOptions {
 }
 
 class SimpleWorkManager {
+
   void Function() callbackFunction;
   String callbackFunctionIdentifier;
 
@@ -43,13 +45,9 @@ class SimpleWorkManager {
     return SimpleWorkManagerPlatform.instance.cancel();
   }
 
-  Future<void> callbackFunctionAsync() async {
-    callbackFunction();
-  }
-
   Future<dynamic> _platformCallHandler(MethodCall call) async {
     if (call.method == callbackFunctionIdentifier) {
-      callbackFunctionAsync();
+      callbackFunction();
     } else {
       debugPrint('Unknown method ${call.method}');
       throw MissingPluginException();
