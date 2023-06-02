@@ -43,9 +43,13 @@ class SimpleWorkManager {
     return SimpleWorkManagerPlatform.instance.cancel();
   }
 
+  Future<void> callbackFunctionAsync() async {
+    callbackFunction();
+  }
+
   Future<dynamic> _platformCallHandler(MethodCall call) async {
     if (call.method == callbackFunctionIdentifier) {
-      callbackFunction();
+      callbackFunctionAsync();
     } else {
       debugPrint('Unknown method ${call.method}');
       throw MissingPluginException();
