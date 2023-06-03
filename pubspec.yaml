@@ -4,13 +4,13 @@ version: 0.2.1
 homepage: https://github.com/Tomohiro-Uchida-Flutter/simple_work_manager
 
 environment:
-  sdk: ^3.0.3
-  flutter: ^3.10.3
+  sdk: ">=3.0.3 <4.0.0"
+  flutter: '>=3.10.3'
 
 dependencies:
   flutter:
     sdk: flutter
-  plugin_platform_interface:
+  plugin_platform_interface: ^2.1.4
 
 dev_dependencies:
   flutter_test:
