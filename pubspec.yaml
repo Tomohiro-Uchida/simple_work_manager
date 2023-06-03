@@ -1,21 +1,21 @@
 name: simple_work_manager
 description: Simple Work Manager for Android and iOS.
-version: 0.2.0
+version: 0.2.1
 homepage: https://github.com/Tomohiro-Uchida-Flutter/simple_work_manager
 
 environment:
-  sdk: '>=2.19.4 <3.0.0'
-  flutter: ">=2.5.0"
+  sdk: ^3.0.3
+  flutter: ^3.10.3
 
 dependencies:
   flutter:
     sdk: flutter
-  plugin_platform_interface: ^2.0.2
+  plugin_platform_interface:
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -54,19 +54,7 @@ flutter:
   # To add custom fonts to your plugin package, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
-  # list giving the asset and other descriptors for the font. For
-  # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
+  # list giving the asset and other descriptors for the font.
   #
   # For details regarding fonts in packages, see
   # https://flutter.dev/custom-fonts/#from-packages
