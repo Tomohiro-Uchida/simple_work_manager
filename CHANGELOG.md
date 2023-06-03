@@ -42,3 +42,6 @@ Bug fixed.
 
 ## 0.1.6
 Bug fixed.
+
+## 0.2.0
+Bug fixed.

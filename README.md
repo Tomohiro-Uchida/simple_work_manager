@@ -14,8 +14,8 @@ dependencies:
 ```
 
 ### iOS
-1.　Permitted background task scheduler identifier in info.plist in Xcode  
-Set PermittedBackgroundTaskSchedulerIdentifier as unique string like <[com].[domain].simple_work_manager.process>.  
+1. Permitted background task scheduler identifier in info.plist in Xcode  
+Set PermittedBackgroundTaskSchedulerIdentifier as unique string like <[com].[domain].simple_work_manager.process>.
 2. Background modes in Xcode   
 Check Background processing.  
 3. Add code for registration into AppDelegate.swift.
@@ -30,7 +30,7 @@ import 'package:simple_work_manager/simple_work_manager.dart';
 ## Preparing callback function
 ```dart:main.dart
 @pragma("vm:entry-point")
-void callbackDispatcher() {
+Future<void> callbackDispatcher() async {
     // execute background jobs here.
     // Jobs can include async function call.
 }
@@ -124,9 +124,9 @@ Simple Work Manager can specify the constraints such that requiresNetworkConnect
   </tr>
 </table>
 
-### SUGGESTION FOR CONTRAINTS
+### SUGGESTION FOR CONSTRAINTS
 
-Set requiresExternalPower and requiresNetworkConnectivity to TRUE and plug external power IN to execute backgroud process continously.
+Set requiresExternalPower and requiresNetworkConnectivity to TRUE and plug external power IN to execute background process continuously.
 
 ## Cancel the schedule
 ```

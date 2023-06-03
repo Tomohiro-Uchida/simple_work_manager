@@ -3,7 +3,7 @@ import 'package:simple_work_manager/simple_work_manager.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 @pragma("vm:entry-point")
-void callbackDispatcher() {
+Future<void> callbackDispatcher() async {
   debugPrint("simple_work_manager: callbackDispatcher() is called at ${DateTime.now()}");
   final flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
   flutterLocalNotificationsPlugin

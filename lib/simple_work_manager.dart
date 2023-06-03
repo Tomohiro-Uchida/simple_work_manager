@@ -28,7 +28,7 @@ class IOSOptions {
 
 class SimpleWorkManager {
 
-  void Function() callbackFunction;
+  Future<void> Function() callbackFunction;
   String callbackFunctionIdentifier;
 
   SimpleWorkManager({required this.callbackFunction, required this.callbackFunctionIdentifier}) {
