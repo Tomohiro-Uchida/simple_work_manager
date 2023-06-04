@@ -28,7 +28,10 @@ public class SimpleWorkManagerPlugin: NSObject, FlutterPlugin {
         requiresNetworkConnectivity: gRequiresNetworkConnectivity,
         requiresExternalPower: gRequiresExternalPower
       )
-      channelToMain!.invokeMethod(callbackIdentifier!, arguments: nil)
+      // let dispatchQueue = DispatchQueue(label :"SimpleWorkManagerQueue", qos : .userInitiated, attributes : .concurrent )
+      // dispatchQueue.async {
+        channelToMain!.invokeMethod(callbackIdentifier!, arguments: nil)
+      // }
       task.setTaskCompleted(success: true)
       task.expirationHandler = {
       }
