@@ -30,7 +30,7 @@ import 'package:simple_work_manager/simple_work_manager.dart';
 ## Preparing callback function
 ```dart:main.dart
 @pragma("vm:entry-point")
-Future<void> callbackDispatcher() async {
+void callbackDispatcher() {
     sync_func();
     await async_func();
     // execute background jobs here.
