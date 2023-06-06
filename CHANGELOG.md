@@ -60,3 +60,6 @@ Bug fixed.
 
 ## 0.3.0
 Bug fixed.
+
+## 0.3.1
+Bug fixed.
