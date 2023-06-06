@@ -28,7 +28,7 @@ class IOSOptions {
 
 class SimpleWorkManager {
 
-  Future<void> Function() callbackFunction;
+  void Function() callbackFunction;
   String callbackFunctionIdentifier;
 
   SimpleWorkManager({required this.callbackFunction, required this.callbackFunctionIdentifier}) {
@@ -47,7 +47,7 @@ class SimpleWorkManager {
 
   Future<dynamic> _platformCallHandler(MethodCall call) async {
     if (call.method == callbackFunctionIdentifier) {
-      await callbackFunction();
+      callbackFunction();
     } else {
       debugPrint('Unknown method ${call.method}');
       throw MissingPluginException();
