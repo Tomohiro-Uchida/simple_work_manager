@@ -66,3 +66,6 @@ Bug fixed.
 
 ## 0.3.2
 Bug fixed.
+
+## 0.3.3
+Bug fixed.

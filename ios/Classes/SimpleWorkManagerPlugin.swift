@@ -44,7 +44,7 @@ public class SimpleWorkManagerPlugin: NSObject, FlutterPlugin {
         if let args = call.arguments as? Dictionary<String, Any>,
            let taskIdentifierLocal = args["iosTaskIdentifier"] as? String {
           let requiresNetworkConnectivity = args["iosRequiresNetworkConnectivity"] as? Bool
-          let requiresExternalPower = args["requiresExternalPower"] as? Bool
+          let requiresExternalPower = args["iosRequiresExternalPower"] as? Bool
           taskIdentifier = taskIdentifierLocal
           callbackIdentifier = args["callbackIdentifier"] as? String
           schedule(
